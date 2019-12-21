@@ -21,3 +21,16 @@ def get_IPv6():
         return ipv6_addr
     except:
         return ''
+
+    Domainname='x13999.dynv6.net'
+    Benutzername='XHs1GqoHZF8XQxy1VPMiYxy1sYe3ex'
+
+
+
+    print(url_all)
+    a1=input('domainname：')
+    a2=input('miyao：')
+    a3 = input('ipv6：')
+    print(a1)
+    print(a2)
+    print(a3)
