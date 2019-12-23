@@ -75,6 +75,7 @@ def url_toget(Domain_name,Benutzer_name,ipv6_addr):
     return url_all
 
 if __name__ == '__main__':
+    print('ddns_dynv6:win10中文版自动ddns软件，版本号:V1.0.20191223')
     #定义各种参数
     file_name_ini = 'ddns_dynv6.ini'
     Domain_name = ''
@@ -85,10 +86,17 @@ if __name__ == '__main__':
     context = {'data': 'n'}
     #开始
     ipv6_addr=get_ipv6_addr()
-    print('本机首选IPv6地址是：',ipv6_addr)
-    if ipv6_addr[0:4]=='fe80':
-        print('本机IPv6地址是私网地址，请检查IPv6地址情况：')
-        ipv6_addr = input('请手动输入IPv6地址：')
+    if ipv6_addr!='':
+        if ipv6_addr[0:4] == 'fe80':
+            print('本机IPv6地址是私网地址，请检查IPv6地址情况：')
+            os.system("pause")
+            sys.exit()
+        else:
+            print('本机首选IPv6地址是：',ipv6_addr)
+    else:
+        print('找不到可用的本机IPv6')
+        os.system("pause")
+        sys.exit()
     #配置文件读取
     try:
         if os.path.exists(file_name_ini):
